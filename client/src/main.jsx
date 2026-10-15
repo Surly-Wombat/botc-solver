@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Root from "./root";
 import Home from "./routes/home";
 import Start from "./routes/start";
 import Solver from "./routes/solver";
@@ -12,6 +12,7 @@ import "./index.css";
 const router = createBrowserRouter([
     {
         path: "/",
+        Component: Root,
         children: [
             {
                 index: true,

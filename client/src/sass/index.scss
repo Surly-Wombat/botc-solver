@@ -3,3 +3,14 @@
 * {
     box-sizing: border-box;
 }
+
+#content {
+    min-height: 95vh;
+}
+
+#footer {
+    width: 100vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+}
