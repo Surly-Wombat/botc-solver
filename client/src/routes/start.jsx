@@ -1,5 +1,9 @@
+import PlayerInput from '../components/player-input';
+
 export default function Start() {
     return (
-        <div>Start</div>
+        <div id="start">
+            <PlayerInput />
+        </div>
     )
 }
