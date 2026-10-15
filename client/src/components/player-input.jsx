@@ -3,6 +3,8 @@ import { useState } from 'react'
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function PlayerInput() {
     const [playerCount, setPlayerCount] = useState(5);
@@ -27,12 +29,14 @@ export default function PlayerInput() {
 
     function renderPlayerNames(playerCount) {
         const players = [];
-        players.push(<FloatingLabel label="You"><Form.Control placeholder="You" disabled /></FloatingLabel>);
+        players.push(<Form.Group as={Col} sm={6} md={4} xl={3}><FloatingLabel label="Player 1"><Form.Control className="mb-2" value="You" disabled /></FloatingLabel></Form.Group>);
         for(let i = 1; i < playerCount; i++) {
             players.push(
-            <FloatingLabel label={`Player ${i + 1} name`}>
-                <Form.Control className="mt-2" value={playerNames[i]} onChange={e => updatePlayerNames(i, e.target.value)} />
+                <Form.Group as={Col} sm={6} md={4} xl={3}>
+            <FloatingLabel label={`Player ${i + 1}`}>
+                <Form.Control placeholder="" className="mb-2" value={playerNames[i]} onChange={e => updatePlayerNames(i, e.target.value)} />
             </FloatingLabel>
+            </Form.Group>
             );
         }
         return players;
@@ -46,7 +50,8 @@ export default function PlayerInput() {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="playerCount">
+            <Row>
+            <Form.Group as={Col} xs={6} md={4} lg={3} className="mb-3" controlId="playerCount">
                 <Form.Label>Number of Players</Form.Label>
                 <Form.Select onChange={updatePlayerCount}>
                     <option value={5}>5</option>
@@ -60,9 +65,10 @@ export default function PlayerInput() {
                     <option value={13}>13</option>
                 </Form.Select>
             </Form.Group>
-            <Form.Group controlId="playerNames">
+            </Row>
+            <Row>
                 {renderPlayerNames(playerCount)}
-            </Form.Group>
+            </Row>
             <Button className="mt-3" variant="primary" type="submit">
                 Submit
             </Button>
