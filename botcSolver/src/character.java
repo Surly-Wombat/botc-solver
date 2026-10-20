@@ -56,6 +56,10 @@ public class character {
 		safe = s;
 	}
 	
+	public void setPoison(boolean p) {
+		poisoned = p;
+	}
+	
 	// Getters
 	public String getName() {
 		return name;
