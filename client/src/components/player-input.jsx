@@ -15,7 +15,7 @@ export default function PlayerInput() {
 
     function generatePlayerNames() {
         const res = Array.from({ length: 13 }, (value, i) => `Player ${i + 1}`);
-        res[0] = "";
+        res[0] = "You";
         return res;
     }
 
@@ -48,6 +48,9 @@ export default function PlayerInput() {
     function handleSubmit(e) {
         e.preventDefault();
         const names = playerNames.slice(0, playerCount);
+        const gameID = Math.random().toString(36).substring(2, 13);
+        document.cookie = `gameID=${gameID}`;
+        // TODO: Send info to server
         navigate('/solver', { state: {playerCount, playerNames: names}});
     }
 
