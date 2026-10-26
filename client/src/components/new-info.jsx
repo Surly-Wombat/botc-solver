@@ -7,11 +7,13 @@ import OwnRole from './info/own-role';
 import RoleInfo from './info/role-info';
 import Execution from './info/execution';
 import Death from './info/death';
-import Virgin from './info/virgin';
+import VirginDeath from './info/virgin-death';
+import Slayer from './info/slayer';
 import SingleClaim from './info/single-claim';
 import MultipleClaim from './info/multiple-claim';
 import InfoClaim from './info/info-claim';
 import SocialRead from './info/social-read';
+import VirginSurvival from './info/virgin-survival';
 
 export default function NewInfo({ players }) {
     const [type, setType] = useState("");
@@ -22,21 +24,25 @@ export default function NewInfo({ players }) {
             case "own-role":
                 return <OwnRole onChange={e => setDetails(e)} />
             case "role-info":
-                return <RoleInfo />
+                return <RoleInfo players={players} onChange={e => setDetails(e)} />
             case "execution":
                 return <Execution players={players} onChange={e => setDetails(e)} />
             case "death":
                 return <Death players={players} onChange={e => setDetails(e)} />
-            case "virgin":
-                return <Virgin players={players} onChange={e => setDetails(e)} />
+            case "virgin-death":
+                return <VirginDeath players={players} onChange={e => setDetails(e)} />
+            case "slayer":
+                return <Slayer players={players} onChange={e => setDetails(e)} />
             case "single-claim":
                 return <SingleClaim players={players} onChange={e => setDetails(e)} />
             case "multiple-claim":
-                return <MultipleClaim />
+                return <MultipleClaim players={players} onChange={e => setDetails(e)} />
             case "info-claim":
-                return <InfoClaim />
+                return <InfoClai players={players} onChange={e => setDetails(e)} />
             case "social-read":
                 return <SocialRead players={players} onChange={e => setDetails(e)} />
+            case "virgin-survival":
+                return <VirginSurvival players={players} onChange={e => setDetails(e)} />
             default:
                 return <></>
         }
@@ -46,7 +52,7 @@ export default function NewInfo({ players }) {
         e.preventDefault();
         const data = {type, details};
         // TODO: Send info to server
-        alert(JSON.stringify(data));
+        // TODO: Move new info to "previous info" section on solver page
     }
 
     return (
@@ -60,11 +66,13 @@ export default function NewInfo({ players }) {
                     <option value="execution">Death (Execution)</option>
                     <option value="death">Death (Nighttime)</option>
                     <option value="no-death">No Death</option>
-                    <option value="virgin">Hard Confirmation (Virgin)</option>
+                    <option value="virgin-death">Hard Confirmation (Virgin Death)</option>
+                    <option value="slayer">Slayer Shot</option>
                     <option value="single-claim">Role Claim (Single)</option>
                     <option value="multiple-claim">Role Claim (Multiple)</option>
                     <option value="info-claim">Info Claim</option>
                     <option value="social-read">Social Read</option>
+                    <option value="virgin-survival">Survived Nominating Virgin</option>
                 </Form.Select>
             </Form.Group>
             {renderExtraControls(type)}

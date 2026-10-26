@@ -6,11 +6,11 @@ import PlayerSelect from '../player-select';
 import RoleSelect from '../role-select';
 
 export default function SingleClaim({ players, onChange }) {
-    const [player, setPlayer] = useState(0);
+    const [player, setPlayer] = useState(1);
     const [role, setRole] = useState("washerwoman");
 
     useEffect(() => {
-        onChange({ player: 0, role: "washerwoman" });
+        onChange({ player: 1, role: "washerwoman" });
     }, []);
 
     function handlePlayerChange(e) {

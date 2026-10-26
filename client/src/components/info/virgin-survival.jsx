@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import PlayerSelect from '../player-select';
 
-export default function Virgin({ players, onChange }) {
+export default function VirginSurvival({ players, onChange }) {
     const [virgin, setVirgin] = useState(0);
     const [nominator, setNominator] = useState(1);
 
