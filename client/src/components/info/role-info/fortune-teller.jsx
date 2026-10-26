@@ -7,25 +7,25 @@ import PlayerSelect from '../../player-select';
 export default function FortuneTeller({ players, onChange }) {
     const [player1, setPlayer1] = useState(1);
     const [player2, setPlayer2] = useState(2);
-    const [evil, setEvil] = useState(false);
+    const [demon, setDemon] = useState(false);
 
     useEffect(() => {
-        onChange({ player1: 1, player2: 2, evil: false });
+        onChange({ player1: 1, player2: 2, demon: false });
     }, []);
 
     function handlePlayer1Change(e) {
         setPlayer1(e.target.value);
-        onChange({ player1: e.target.value, player2, evil });
+        onChange({ player1: e.target.value, player2, demon });
     }
 
     function handlePlayer2Change(e) {
         setPlayer2(e.target.value);
-        onChange({ player1, player2: e.target.value, evil });
+        onChange({ player1, player2: e.target.value, demon });
     }
 
-    function handleEvilChange(e) {
-        setEvil(e.target.checked);
-        onChange({ player1, player2, evil: e.target.checked });
+    function handleDemonChange(e) {
+        setDemon(e.target.checked);
+        onChange({ player1, player2, demon: e.target.checked });
     }
     
     return (
@@ -39,8 +39,8 @@ export default function FortuneTeller({ players, onChange }) {
             <PlayerSelect players={players} value={player2} onChange={handlePlayer2Change} />
         </Form.Group>
         <Form.Group>
-            <Form.Label>Read as evil?</Form.Label>
-            <Form.Check checked={evil} onChange={handleEvilChange} />
+            <Form.Label>Read as Demon?</Form.Label>
+            <Form.Check checked={demon} onChange={handleDemonChange} />
         </Form.Group>
         </>
     )

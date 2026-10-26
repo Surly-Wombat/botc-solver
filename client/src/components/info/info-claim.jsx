@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Form from 'react-bootstrap/Form';
 
+import PlayerSelect from '../player-select';
 import RoleSelect from '../role-select';
 
 import Washerwoman from './role-info/washerwoman';
@@ -14,25 +15,31 @@ import Undertaker from './role-info/undertaker';
 import Ravenkeeper from './role-info/ravenkeeper';
 
 export default function InfoClaim({ players, onChange }) {
+    const [claimer, setClaimer] = useState(1);
     const [role, setRole] = useState("washerwoman");
     const [info, setInfo] = useState({});
 
     useEffect(() => {
-        onChange({ role: "washerwoman", info: {} });
+        onChange({ claimer: 1, role: "washerwoman", info: {} });
     }, []);
+
+    function handleClaimerChange(e) {
+        setClaimer(e.target.value);
+        onChange({ claimer: e.target.value, role, info });
+    }
 
     function handleRoleChange(e) {
         setRole(e.target.value);
-        onChange({ role: e.target.value, info });
+        onChange({ claimer, role: e.target.value, info });
     }
 
     function handleInfoChange(value) {
         setInfo(value);
-        onChange({ role, info: value });
+        onChange({ claimer, role, info: value });
     }
 
     function renderRoleInfo(role) {
-        switch(role) {
+        switch (role) {
             case "washerwoman":
                 return <Washerwoman players={players} onChange={handleInfoChange} />
             case "librarian":
@@ -56,6 +63,10 @@ export default function InfoClaim({ players, onChange }) {
 
     return (
         <>
+            <Form.Group>
+                <Form.Label>Claimer</Form.Label>
+                <PlayerSelect players={players} value={claimer} onChange={handleClaimerChange} />
+            </Form.Group>
             <Form.Group>
                 <Form.Label>Their Role</Form.Label>
                 <RoleSelect value={role} onChange={handleRoleChange} />
