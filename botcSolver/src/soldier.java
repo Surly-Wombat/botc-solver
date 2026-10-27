@@ -2,8 +2,8 @@ package botcSolver;
 
 public class soldier extends character {
 
-    public soldier(String n, String almt, boolean alv) {
-        super(n, almt, "Townsfolk", alv);
+    public soldier(Player p, String n, String almt, boolean alv) {
+        super(p, n, almt, "Townsfolk", alv);
         setProtection(true);
     }
 	
@@ -12,8 +12,9 @@ public class soldier extends character {
 		
 		if (p == true) 
 			setProtection(false);
-		
+			
 		else
 			setProtection(true);
 	}
+	
 }
