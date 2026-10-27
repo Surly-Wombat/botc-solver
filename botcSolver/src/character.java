@@ -1,7 +1,14 @@
 package botcSolver;
 
+/* === CHARACTER ===
+ * this class represents a generic role in the game, this is a parent class 
+ * for all specific roles
+ * Stores info about character and its player's state
+ */
+ 
 public class character {
 	
+	private Player player;
 	private String name;
 	private String alignment;
 	private String roleType;
@@ -21,8 +28,9 @@ public class character {
 	
 	
 	// Contructors
-	public character (String n, String almt, String rt, boolean alv) {
+	public character (Player p, String n, String almt, String rt, , boolean alv) {
 		
+		player = p;
 		name = n;
 		alignment = almt;
 		roleType = rt;
@@ -35,7 +43,7 @@ public class character {
 	
 	
 	
-	// Setters
+	// == Setters ==
 	public void setName (String n) {
 		name = n;
 	}
@@ -60,7 +68,11 @@ public class character {
 		poisoned = p;
 	}
 	
-	// Getters
+	// == Getters ==
+	public Player getPlayer() {
+		return player;
+	}
+	
 	public String getName() {
 		return name;
 	}
