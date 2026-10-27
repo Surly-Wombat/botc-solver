@@ -16,6 +16,7 @@ import SocialRead from './info/social-read';
 import VirginSurvival from './info/virgin-survival';
 
 export default function NewInfo({ players }) {
+    const [day, setDay] = useState(1);
     const [type, setType] = useState("");
     const [details, setDetails] = useState({});
 
@@ -38,7 +39,7 @@ export default function NewInfo({ players }) {
             case "multiple-claim":
                 return <MultipleClaim players={players} onChange={e => setDetails(e)} />
             case "info-claim":
-                return <InfoClai players={players} onChange={e => setDetails(e)} />
+                return <InfoClaim players={players} onChange={e => setDetails(e)} />
             case "social-read":
                 return <SocialRead players={players} onChange={e => setDetails(e)} />
             case "virgin-survival":
@@ -50,13 +51,28 @@ export default function NewInfo({ players }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = {type, details};
+        const data = {day, type, details};
         // TODO: Send info to server
         // TODO: Move new info to "previous info" section on solver page
     }
 
     return (
         <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label>
+                    Time of Info
+                </Form.Label>
+                <Form.Select value={day} onChange={e => setDay(e.target.value)}>
+                    <option value={1}>Night/Day 1</option>
+                    <option value={2}>Night/Day 2</option>
+                    <option value={3}>Night/Day 3</option>
+                    <option value={4}>Night/Day 4</option>
+                    <option value={5}>Night/Day 5</option>
+                    <option value={6}>Night/Day 6</option>
+                    <option value={7}>Night/Day 7</option>
+                    <option value={8}>Night/Day 8</option>
+                </Form.Select>
+            </Form.Group>
             <Form.Group>
                 <Form.Label>Info Type</Form.Label>
                 <Form.Select value={type} onChange={e => setType(e.target.value)}>
