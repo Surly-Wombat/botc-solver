@@ -51,7 +51,8 @@ export default function NewInfo({ players }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = {day, type, details};
+        const id = Math.random().toString(36).substring(2, 13);
+        const data = {id, day, type, details};
         // TODO: Send info to server
         // TODO: Move new info to "previous info" section on solver page
     }
