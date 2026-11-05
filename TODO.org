@@ -1,0 +1,51 @@
+#+TITLE: BotCT Solver Project
+#+STARTUP: OVERVIEW
+#+TODO: TODO(t) NEXT(n) INPROG(i) WAITING(w) | DONE(d)
+#+TAGS: AJ(A) Carson(C) Drew(D) Zach(Z)
+#+TAGS: easy(e) medium(m) hard(h)
+
+* To-do list
+** Solver constraints
+*** NEXT [#A] Setup info                                       :AJ:Zach:easy:
+should be mostly done, thanks chat
+- [ ] unique roles per player
+- [ ] unique players per role
+- [ ] types as per count
+*** NEXT [#A] Night/day constraints                          :AJ:Zach:medium:
+- [ ] dead players can't be the demon
+- [ ] at least one good player is alive
+- [ ] virgin noms
+- [ ] slayer shots
+*** TODO [#A] Role constraints                            :AJ:Drew:Zach:hard:
+- [ ] Washerwoman
+- [ ] Librarian
+- [ ] Investigator
+- [ ] Chef
+- [ ] Empath
+- [ ] Fortune Teller
+- [ ] Undertaker
+- [ ] Monk
+- [ ] Ravenkeeper
+- [ ] Virgin
+- [ ] Slayer
+- [ ] Soldier
+- [ ] Mayor
+- [ ] Butler
+- [ ] Saint
+- [ ] Recluse
+- [ ] Drunk
+- [ ] Poisoner
+- [ ] Spy
+- [ ] Baron
+- [ ] SW
+- [ ] Imp
+*** TODO [#B] 3-for-3s                                                 :easy:
+*** TODO [#B] Social reads as metadata                                 :hard:
+** Solver output
+*** TODO [#A] Conclusions                                    :AJ:Zach:medium:
+- [ ] most likely demon candidates
+- [ ] most likely drunk
+- [ ] likeliest good players
+- [ ] suggestions on how to maximize world reduction
+- [ ] likely number of nights left
+- [ ] Number of worlds
