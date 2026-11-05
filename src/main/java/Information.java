@@ -1,5 +1,8 @@
 import java.util.*;
 
+// TODO: add meta information
+// so Z3 solver has weights to generate worlds
+
 /* === INFORMATION ===
  * this class represents 1 piece of information
  * complete with its containing limitation,

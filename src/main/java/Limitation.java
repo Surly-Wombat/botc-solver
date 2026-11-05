@@ -1,5 +1,8 @@
 import java.util.*;
 
+// TODO: see how we're going to import this to Z3
+// this might be dead weight? depending on how Z3 works
+
 /* === LIMITATION ===
  * this class represents how to apply a possible piece of "TRUE" information
  * to tell whether a gamestate is possible or not
