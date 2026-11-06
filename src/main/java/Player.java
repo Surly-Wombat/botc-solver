@@ -12,7 +12,11 @@ import java.util.*;
  * e.g. Alice's claims are Soldier (), Chef (N1: 1), Empath (N1: 0, N2: 1)
  */
 public class Player {
-    private Boolean isYou; // if we're the player, we KNOW our info is true
+    private final int id;
+    private final int seat; // may be the same as id; determines info for empath
+    
+    private final Boolean isYou; // if we're the player, we KNOW our info is true
+    
     private Boolean alive;
     
     // every character this player is CURRENTLY claiming as

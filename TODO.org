@@ -4,7 +4,32 @@
 #+TAGS: AJ(A) Carson(C) Drew(D) Zach(Z)
 #+TAGS: easy(e) medium(m) hard(h)
 
+* Project organization
+** Backend
+*** Game State
+Representation of game events. Contains classes like:
+- Character
+- Player
+- Night
+- Observation
+- Setup
+*** Game Logic
+Intermediate class: GameHandler
+Translates representation into rules and limitations.
+Passes rules and limitations.
+Probably the class that interacts with the frontend via API
+*** Constraint Translation
+Converts rules and limitations into Z3 predicates. Contains classes like:
+- GameSolver
+- PredicateGenerator
+- Everything related to Z3
+** Frontend
+*** API
 * To-do list
+** Backend-Frontend interface
+*** TODO [#A] write to-do-list
+** Backend organization
+*** TODO [#A] reorganize project into three main folders       :AJ:Zach:easy:
 ** Solver constraints
 *** NEXT [#A] Setup info                                       :AJ:Zach:easy:
 should be mostly done, thanks chat

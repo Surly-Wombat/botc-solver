@@ -8,7 +8,8 @@ package botcSolver;
  */
  
 public class Character {
-    private int pos; // used for e.g. Empath
+    private final String id;
+    
 	private boolean isEvil;
 	private RoleType roleType;
 
@@ -25,17 +26,8 @@ public class Character {
 	
 	
 	// Contructor
-	public Character (Player p, String n, String almt, String rt, , boolean alv) {
-		
-		player = p;
-		name = n;
-		alignment = almt;
-		roleType = rt;
-		poisoned = false;
-		alive = alv;
-		registersEvil = false;
-		ftRegistersEvil = false;
-		safe = false;
+	public Character () {
+        // TODO:
 	}
 
     // TODO: function that generates predicates

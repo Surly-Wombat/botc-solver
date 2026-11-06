@@ -4,24 +4,19 @@ import java.util.*;
 // so Z3 solver has weights to generate worlds
 
 /* === INFORMATION ===
- * this class represents 1 piece of information
- * complete with its containing limitation,
- * the originating player/the storyteller
- * and whether we can assume it is unquestionably true
+ * this class represents 1 piece of claimed information
+ * complete with its containing limitation and the originating player
  * think of this as "Alice said she's the Washerwoman and that either Bob or Charlie are the Empath"
  * maybe Alice is telling the truth. maybe she's lying
  * drunk/poisoning is handled in Limitation
  */
 public class Information {
-    private final boolean fromST;   // directly from ST (e.g. public announcement, your own night action)
     private final Player origin;
     private final Limitation limit;
 
     // TODO: maybe split into private constructor + public special case?
-    public Information (boolean fromST,
-                        Player origin,
+    public Information (Player origin,
                         Limitation limit) {
-        this.fromST = fromST;
         this.origin = origin;
         this.limit = limit;
     }
@@ -29,9 +24,24 @@ public class Information {
     @Override
     public String toString() {
         return origin
-            + (fromST ? " (TRUE)" : "")
             + " gave "
             + limit
             + ".";
     }
 }
+
+/* potential classes
+   
+  public class NumberInformation extends Information {
+  private final int value;
+  }
+
+  public class PlayerPairInformation extends Information {
+  private final Player first;
+  private final Player second;
+  }
+
+  public class CharacterInformation extends Information {
+  private final Character character;
+  }
+*/
