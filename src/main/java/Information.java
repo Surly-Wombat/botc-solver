@@ -41,7 +41,7 @@ public class Information {
   private final Player second;
   }
 
-  public class CharacterInformation extends Information {
-  private final Character character;
+  public class RoleInformation extends Information {
+  private final Role;
   }
 */

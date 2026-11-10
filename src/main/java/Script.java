@@ -1,6 +1,6 @@
 // TODO
 public class Script {
-    private List<Character> characters;
+    private List<Role> roles;
     private SetupRules setupRules;
 }
 

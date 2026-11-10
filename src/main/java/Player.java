@@ -14,9 +14,10 @@ import java.util.*;
 public class Player {
     private final int id;
     private final int seat; // may be the same as id; determines info for empath
-    
+	
     private final Boolean isYou; // if we're the player, we KNOW our info is true
     
+	private Character 
     private Boolean alive;
     
     // every character this player is CURRENTLY claiming as

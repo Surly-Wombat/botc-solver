@@ -1,13 +1,13 @@
 package botcSolver;
 
-/* === CHARACTER ===
+/* === Role ===
  * this class represents a generic role in the game, this is a parent class 
  * for all specific roles
  * Stores info about character and claimed information
  * Generates predicates based on claims
  */
  
-public class Character {
+public class Role {
     private final String id;
     
 	private boolean isEvil;
@@ -26,7 +26,7 @@ public class Character {
 	
 	
 	// Contructor
-	public Character () {
+	public Role () {
         // TODO:
 	}
 
