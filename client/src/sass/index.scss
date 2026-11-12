@@ -8,6 +8,17 @@
     min-height: 95vh;
 }
 
+.fa-trash-can {
+    color: red;
+    border: 0 0 black;
+    border-radius: 20%;
+    padding: 1vh 0.5vw;
+
+    &:hover {
+        background-color: lightcoral;
+    }
+}
+
 #footer {
     width: 100vw;
     padding-top: 1vh;

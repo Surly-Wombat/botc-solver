@@ -12,21 +12,23 @@ import java.util.*;
  * e.g. Alice's claims are Soldier (), Chef (N1: 1), Empath (N1: 0, N2: 1)
  */
 public class Player {
-    private final int id;
+    // private final int id;
     private final int seat; // may be the same as id; determines info for empath
+	
+    private final boolean isYou; // if we're the player, we KNOW our info is true
     
-    private final Boolean isYou; // if we're the player, we KNOW our info is true
-    
-    private Boolean alive;
+	private String role;
+    private boolean alive;
     
     // every character this player is CURRENTLY claiming as
-	private ArrayList<Characters> currentClaims;
+	private ArrayList<String> currentClaims;
 
     // TODO: meta information? whether we trust this player or not. use as weights for Z3 solver
 	
-	public Player () {
-		// TODO
+	public Player (boolean alv) {
+		
 	}
 
     // TODO: function that generates predicates for this player
+	
 }
