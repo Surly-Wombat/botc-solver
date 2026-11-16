@@ -11,9 +11,23 @@
 	
 	private String role;
 	
-	private String nightInfo;
+	// Not all of the following will be relevant to all roles
+	private ArrayList<String> nightInfo;
 	private boolean hasAbility;
 	
+	// ===CONSTRUCTORS===
+	public RoleClaim (String role) {
+		this.role = role;
+	}
 	
+	public RoleClaim (String role, ArrayList<String> nightInfo) {
+		this.role = role;
+		this.nightInfo = nightInfo;
+	}
+	
+	public RoleClaim (String role, boolean hasAbility) {
+		this.role = role;
+		this.hasAbility = hasAbility;
+	}
  }
  

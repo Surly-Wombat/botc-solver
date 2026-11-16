@@ -17,16 +17,16 @@ public class Player {
 	
     private final boolean isYou; // if we're the player, we KNOW our info is true
     
-	private String role;
     private boolean alive;
     
     // every character this player is CURRENTLY claiming as
-	private ArrayList<String> currentClaims;
+	private ArrayList<RoleClaims> roleClaims;
 
     // TODO: meta information? whether we trust this player or not. use as weights for Z3 solver
 	
-	public Player (boolean alv) {
-		
+	public Player (int seat, boolean alive) {
+		this.seat = seat;
+		this.alive = alive;
 	}
 
     // TODO: function that generates predicates for this player
